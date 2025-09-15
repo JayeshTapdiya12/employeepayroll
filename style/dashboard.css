@@ -16,16 +16,22 @@ body {
   display: flex;
   background-color: white;
   width: 100%;
-  padding-left: 20vh;
+  padding-left: 32vh;
   align-items: center;
 }
 
 .image {
   width: 2vh;
-  /* height: 2vh; */
+  /* margin-left: 15vh; */
+  /* height: 4vh; */
+}
+.image img {
+  width: 6vh;
+  height: 6vh;
 }
 .name {
-  padding-left: 3vh;
+  padding-left: 4vh;
+  /* font-weight: 0; */
 }
 
 .detail {
