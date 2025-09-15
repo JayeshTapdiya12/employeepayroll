@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empolyee Payroll</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../style/dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="maincontainer">
+
+        <!-- header start here -->
+        <div class="header">
+            <div class="image">
+                <img src="../assests/image.png" alt="logo" srcset="">
+            </div>
+            <div class="name">
+                <h5 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span></h5>
+
+            </div>
+        </div>
+
+        <div class="detail">
+            <div>
+                <h5>Employee Details</h5>
+
+            </div>
+            <div class="detailbutton">
+                <button>Search</button>
+                <button>+ Add user</button>
+            </div>
+        </div>
+
+
+        <div class="emp">
+            <div class="emp-card">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Start Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="emp-data">
+                        <tr>
+                            <th scope="row"><img src="" alt="logo of the emp"></th>
+                            <td>Mark</td>
+                            <td>male</td>
+                            <td>
+                                <p class="department">@hrs</p>
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-indian-rupee-sign"> </i>25000
+                            </td>
+                            <td>2/2/2025</td>
+                            <td>
+                                <div class="tdbutton">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <i class="fa-sharp fa-solid fa-pencil"></i>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>@social</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
