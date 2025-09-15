@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  /* margin-bottom: 5px; */
   padding: 0 10px;
   margin-top: 40px;
   width: 70%;
@@ -40,9 +40,10 @@ body {
 }
 
 .detail h5 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font: normal normal bold 24px Roboto;
+  letter-spacing: 0px;
+  color: #42515f;
+  opacity: 1;
 }
 
 .detailbutton button {
@@ -57,7 +58,7 @@ body {
 }
 
 .detailbutton button:first-child {
-  background-color: #2196f3;
+  background-color: #e9eef2;
 }
 
 .detailbutton button:hover {
@@ -88,6 +89,11 @@ body {
 .table thead {
   background: #444;
   color: #fff;
+}
+
+.table thead th {
+  color: white;
+  background-color: #42515f;
 }
 
 .table th,
