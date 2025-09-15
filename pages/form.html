@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empolyee Payroll</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../style/form.css">
+</head>
+
+<body>
+
+    <div class="formcontainer">
+        <!-- header start here -->
+        <div class="header">
+            <div class="image">
+                <img src="../assests/image.png" alt="logo" srcset="">
+            </div>
+            <div class="name">
+                <h6 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span></h6>
+            </div>
+        </div>
+
+        <div class="formconta">
+            <h5> Employee Payroll Form</h5>
+            <form>
+                <div class="flexxx">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Enter name" />
+                </div>
+
+                <div class="flexxx">
+                    <label>Profile image</label>
+                    <div class="profile-images">
+                        <label><input type="radio" name="profile"><img src="../assests/img1.png" alt=""></label>
+                        <label><input type="radio" name="profile"><img src="../assests/img2.png" alt=""></label>
+                        <label><input type="radio" name="profile"><img src="../assests/img3.png" alt=""></label>
+                        <label><input type="radio" name="profile"><img src="../assests/img4.png" alt=""></label>
+                    </div>
+                </div>
+
+                <div class="flexxx">
+                    <label>Gender</label>
+                    <div class="flexxx">
+                        <label><input type="radio" name="gender"> Male</label>
+                        <label><input type="radio" name="gender"> Female</label>
+                    </div>
+                </div>
+                <div class="flexxx">
+                    <label>Department</label>
+                    <div class="flexxx">
+                        <label><input type="checkbox"> HR</label>
+                        <label><input type="checkbox"> Sales</label>
+                        <label><input type="checkbox"> Finance</label>
+                        <label><input type="checkbox"> Engineer</label>
+                        <label><input type="checkbox"> Others</label>
+                    </div>
+                </div>
+                <div class="flexxx">
+                    <label>Salary</label>
+                    <input type="text" name="salary" placeholder="Enter salary" />
+                </div>
+                <div class="flexxx">
+
+                    <label>Start Date</label>
+                    <div class="date-select">
+
+                        <input type="text" name="date" placeholder="Enter date" />
+                        <input type="text" name="month" placeholder="Enter month" />
+                        <input type="text" name="year" placeholder="Enter year" />
+                    </div>
+                </div>
+                <div class="flexxx">
+                    <label>Notes</label>
+                    <textarea placeholder="Enter notes"></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="cancel">Cancel</button>
+                    <div>
+                        <button type="submit" class="submit">Submit</button>
+                        <button type="reset" class="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
