@@ -27,7 +27,8 @@ body {
   height: 6vh;
 }
 .name {
-  padding-left: 4vh;
+  margin-top: 6px;
+  padding-left: 5vh;
 }
 
 .formconta {
@@ -41,6 +42,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.property label {
+  margin-top: 4vh;
+}
+.value div {
+  margin-top: 5px;
+}
+
 label {
   display: block;
   margin: 12px 0 5px;
@@ -51,10 +64,15 @@ input[type="text"],
 select,
 textarea {
   margin-left: 20px;
-  width: 80%;
+  margin: 10px;
+  width: 60%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+select {
+  width: 70%;
 }
 
 .profile-images {
@@ -89,6 +107,10 @@ input[type="checkbox"] {
   gap: 10px;
 }
 
+.date-select select {
+  width: 30vh;
+  margin-right: 8px;
+}
 textarea {
   height: 70px;
 }
@@ -122,5 +144,5 @@ button {
 .flexxx {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
