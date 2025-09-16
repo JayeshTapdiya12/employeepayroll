@@ -30,7 +30,8 @@ body {
   height: 6vh;
 }
 .name {
-  padding-left: 4vh;
+  margin-top: 6px;
+  padding-left: 5vh;
   /* font-weight: 0; */
 }
 
@@ -45,6 +46,11 @@ body {
   margin-left: 33vh;
 }
 
+.formconta {
+  display: flex;
+  flex-direction: row;
+}
+
 .detail h5 {
   font: normal normal bold 24px Roboto;
   letter-spacing: 0px;
@@ -57,7 +63,7 @@ body {
   padding: 6px 12px;
   border: none;
   border-radius: 5px;
-  background-color: #4caf50;
+  background-color: #82a70c;
   color: white;
   cursor: pointer;
   font-size: 14px;
@@ -80,9 +86,9 @@ body {
 .emp-card {
   width: 90%;
   max-width: 1100px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   padding: 15px;
 }
 
@@ -112,18 +118,23 @@ body {
   background: #f9f9f9;
 }
 
+.departments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 200px;
+}
+
 .department {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-right: 5px;
+  background: #e0e0e0;
+  background: #e9fea5 0% 0% no-repeat padding-box;
   white-space: nowrap;
   font: normal normal normal 14px/19px Roboto;
   letter-spacing: 0px;
-
-  background: #e9fea5 0% 0% no-repeat padding-box;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .tdbutton {
