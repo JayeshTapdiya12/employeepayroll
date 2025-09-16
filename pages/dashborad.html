@@ -19,11 +19,15 @@
 
         <!-- header start here -->
         <div class="header">
+
             <div class="image">
                 <img src="../assests/image.png" alt="logo" srcset="">
             </div>
             <div class="name">
-                <h6 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span></h6>
+                <a href="../pages/dashborad.html" style="text-decoration: none;">
+                    <h6 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span>
+                    </h6>
+                </a>
 
             </div>
         </div>
@@ -35,7 +39,9 @@
             </div>
             <div class="detailbutton">
                 <button><i class="fa-solid fa-magnifying-glass" style="color: black;"></i></button>
-                <button>+ Add user</button>
+                <a href="../pages/form.html" style="text-decoration: none;"> <button
+                        style="background-color: #82A70C;">+
+                        Add user</button></a>
             </div>
         </div>
 
@@ -46,7 +52,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th></th>
                             <th>Name</th>
                             <th>Gender</th>
                             <th>Department</th>
@@ -57,11 +62,16 @@
                     </thead>
                     <tbody id="emp-data">
                         <tr>
-                            <th scope="row"><img src="" alt="logo of the emp"></th>
-                            <td>Mark</td>
+                            <td><img src="" alt="logo of the emp"> Mark</td>
                             <td>male</td>
                             <td>
-                                <p class="department">@hrs</p>
+                                <div class="departments">
+                                    <p class="department">@hrs</p>
+                                    <p class="department">@hrs</p>
+                                    <p class="department">@hrs</p>
+                                    <p class="department">@hrs</p>
+                                    <p class="department">@hrs</p>
+                                </div>
                             </td>
                             <td>
                                 <i class="fa-solid fa-indian-rupee-sign"> </i>25000
@@ -76,13 +86,11 @@
 
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
                             <td>@fat</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
                             <td>John</td>
                             <td>Doe</td>
                             <td>@social</td>
