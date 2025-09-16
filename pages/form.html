@@ -21,62 +21,136 @@
                 <img src="../assests/image.png" alt="logo" srcset="">
             </div>
             <div class="name">
-                <h6 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span></h6>
+                <a href="../pages/dashborad.html" style="text-decoration: none;">
+                    <h6 style="color: green;">EMPLOYEE <span><br></span> <span style="color: #658292;">Payroll</span>
+                    </h6>
+                </a>
             </div>
         </div>
 
         <div class="formconta">
             <h5> Employee Payroll Form</h5>
             <form>
-                <div class="flexxx">
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Enter name" />
-                </div>
+                <div class="form">
 
-                <div class="flexxx">
-                    <label>Profile image</label>
-                    <div class="profile-images">
-                        <label><input type="radio" name="profile"><img src="../assests/img1.png" alt=""></label>
-                        <label><input type="radio" name="profile"><img src="../assests/img2.png" alt=""></label>
-                        <label><input type="radio" name="profile"><img src="../assests/img3.png" alt=""></label>
-                        <label><input type="radio" name="profile"><img src="../assests/img4.png" alt=""></label>
-                    </div>
-                </div>
+                    <div class="property">
+                        <label>Name</label>
+                        <label>Profile image</label>
+                        <label>Gender</label>
+                        <label>Department</label>
+                        <label>Salary</label>
+                        <label>Start Date</label>
+                        <label>Notes</label>
 
-                <div class="flexxx">
-                    <label>Gender</label>
-                    <div class="flexxx">
-                        <label><input type="radio" name="gender"> Male</label>
-                        <label><input type="radio" name="gender"> Female</label>
                     </div>
-                </div>
-                <div class="flexxx">
-                    <label>Department</label>
-                    <div class="flexxx">
-                        <label><input type="checkbox"> HR</label>
-                        <label><input type="checkbox"> Sales</label>
-                        <label><input type="checkbox"> Finance</label>
-                        <label><input type="checkbox"> Engineer</label>
-                        <label><input type="checkbox"> Others</label>
-                    </div>
-                </div>
-                <div class="flexxx">
-                    <label>Salary</label>
-                    <input type="text" name="salary" placeholder="Enter salary" />
-                </div>
-                <div class="flexxx">
 
-                    <label>Start Date</label>
-                    <div class="date-select">
+                    <div class="value">
+                        <input type="text" name="name" placeholder="Enter name" />
+                        <div class="profile-images">
+                            <label><input type="radio" name="profile"><img src="../assests/img1.png" alt=""></label>
+                            <label><input type="radio" name="profile"><img src="../assests/img2.png" alt=""></label>
+                            <label><input type="radio" name="profile"><img src="../assests/img3.png" alt=""></label>
+                            <label><input type="radio" name="profile"><img src="../assests/img4.png" alt=""></label>
+                        </div>
+                        <div class="flexxx">
+                            <label><input type="radio" name="gender"> Male</label>
+                            <label><input type="radio" name="gender"> Female</label>
+                        </div>
+                        <div class="flexxx">
+                            <label><input type="checkbox"> HR</label>
+                            <label><input type="checkbox"> Sales</label>
+                            <label><input type="checkbox"> Finance</label>
+                            <label><input type="checkbox"> Engineer</label>
+                            <label><input type="checkbox"> Others</label>
+                        </div>
+                        <div class="date-select">
 
-                        <input type="text" name="date" placeholder="Enter date" />
-                        <input type="text" name="month" placeholder="Enter month" />
-                        <input type="text" name="year" placeholder="Enter year" />
+                            <select name="date" id="date">
+                                <option value="day">select the data</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+
+                            </select>
+
+                            <select name="month" id="month">
+                                <option value="month">select the month</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+
+                            <select name="year">
+                                <option value="">Year</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+
+
+                        <select name="salary">
+                            <option value="">select salary</option>
+                            <option value="10000">10000</option>
+                            <option value="20000">20000</option>
+                            <option value="30000">30000</option>
+                            <option value="40000">40000</option>
+                            <option value="50000">50000</option>
+                            <option value="60000">60000</option>
+                            <option value="70000">70000</option>
+                            <option value="80000">80000</option>
+                            <option value="90000">90000</option>
+                            <option value="100000">100000</option>
+                        </select>
+
+                        <textarea placeholder="Enter notes"></textarea>
+
                     </div>
-                </div>
-                <div class="flexxx">
-                    <label>Notes</label>
-                    <textarea placeholder="Enter notes"></textarea>
                 </div>
                 <div class="buttons">
                     <button type="button" class="cancel">Cancel</button>
@@ -85,8 +159,12 @@
                         <button type="reset" class="reset">Reset</button>
                     </div>
                 </div>
-            </form>
         </div>
+
+
+        </form>
+
+    </div>
     </div>
 </body>
 
