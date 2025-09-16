@@ -10,6 +10,17 @@ document.getElementById("Payroll").addEventListener('submit', function (event) {
 
 })
 
+document.getElementById("Payroll").addEventListener('reset', function (event) {
+    document.getElementById("Payroll").reset();
+
+});
+
+document.getElementById('cancel').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById("Payroll").reset();
+    window.location.replace("http://127.0.0.1:5500/pages/dashborad.html");
+});
+
 function validateFormData() {
     console.log("Validating form data...");
 
