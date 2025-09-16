@@ -30,7 +30,7 @@
 
         <div class="formconta">
             <h5> Employee Payroll Form</h5>
-            <form>
+            <form id="Payroll">
                 <div class="form">
 
                     <div class="property">
@@ -45,23 +45,26 @@
                     </div>
 
                     <div class="value">
-                        <input type="text" name="name" placeholder="Enter name" />
+                        <input type="text" name="name" value="name" placeholder="Enter name" />
                         <div class="profile-images">
-                            <label><input type="radio" name="profile"><img src="../assests/img1.png" alt=""></label>
-                            <label><input type="radio" name="profile"><img src="../assests/img2.png" alt=""></label>
-                            <label><input type="radio" name="profile"><img src="../assests/img3.png" alt=""></label>
-                            <label><input type="radio" name="profile"><img src="../assests/img4.png" alt=""></label>
+                            <label><input type="radio" name="profile" value="../assests/img1.png"><img
+                                    src="../assests/img1.png" alt=""></label>
+                            <label><input type="radio" name="profile" value="../assests/img2.png"><img
+                                    src="../assests/img2.png" alt=""></label>
+                            <label><input type="radio" name="profile" value="../assests/img3.png"><img
+                                    src="../assests/img3.png" alt=""></label>
+                            <label><input type="radio" name="profile" value="../assests/img4.png"><img
+                                    src="../assests/img4.png" alt=""></label>
                         </div>
                         <div class="flexxx">
-                            <label><input type="radio" name="gender"> Male</label>
-                            <label><input type="radio" name="gender"> Female</label>
+                            <label><input type="radio" name="gender" value="male"> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
                         </div>
                         <div class="flexxx">
-                            <label><input type="checkbox"> HR</label>
-                            <label><input type="checkbox"> Sales</label>
-                            <label><input type="checkbox"> Finance</label>
-                            <label><input type="checkbox"> Engineer</label>
-                            <label><input type="checkbox"> Others</label>
+                            <label><input type="checkbox" name="department" value="hr"> HR</label>
+                            <label><input type="checkbox" name="department" value="sales"> Sales</label>
+                            <label><input type="checkbox" name="department" value="Finance"> Finance</label>
+                            <label><input type="checkbox" name="department" value="Engineer"> Engineer</label>
                         </div>
                         <div class="date-select">
 
@@ -148,7 +151,7 @@
                             <option value="100000">100000</option>
                         </select>
 
-                        <textarea placeholder="Enter notes"></textarea>
+                        <textarea placeholder="Enter notes" name="note" value="note"></textarea>
 
                     </div>
                 </div>
