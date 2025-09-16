@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="../style/form.css">
+    <script src="../script/form.js" defer></script>
 </head>
 
 <body>
@@ -38,14 +39,14 @@
                         <label>Profile image</label>
                         <label>Gender</label>
                         <label>Department</label>
-                        <label>Salary</label>
                         <label>Start Date</label>
+                        <label>Salary</label>
                         <label>Notes</label>
 
                     </div>
 
                     <div class="value">
-                        <input type="text" name="name" value="name" placeholder="Enter name" />
+                        <input type="text" name="name" id="name" value="name" placeholder="Enter name" />
                         <div class="profile-images">
                             <label><input type="radio" name="profile" value="../assests/img1.png"><img
                                     src="../assests/img1.png" alt=""></label>
@@ -120,7 +121,7 @@
                                 <option value="12">12</option>
                             </select>
 
-                            <select name="year">
+                            <select name="year" id="year">
                                 <option value="">Year</option>
                                 <option value="2015">2015</option>
                                 <option value="2016">2016</option>
@@ -137,7 +138,7 @@
                         </div>
 
 
-                        <select name="salary">
+                        <select name="salary" id="salary">
                             <option value="">select salary</option>
                             <option value="10000">10000</option>
                             <option value="20000">20000</option>
@@ -151,7 +152,7 @@
                             <option value="100000">100000</option>
                         </select>
 
-                        <textarea placeholder="Enter notes" name="note" value="note"></textarea>
+                        <textarea placeholder="Enter notes" name="note" id="note" value="note"></textarea>
 
                     </div>
                 </div>
