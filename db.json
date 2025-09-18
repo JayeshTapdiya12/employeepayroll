@@ -1,1 +1,17 @@
-{}
+{
+  "empolyee": [
+    {
+      "id": "dd01",
+      "name": "jayesh",
+      "profile": "../assests/img1.png",
+      "gender": "male",
+      "department": [
+        "hr",
+        "Finance"
+      ],
+      "salary": "60000",
+      "startdate": "3/2/2021",
+      "note": "hello"
+    }
+  ]
+}
