@@ -161,10 +161,10 @@ $(document).ready(function () {
         const name = $('#name').val().trim();
         console.log(name);
 
-
-        if (name === "") {
-            alert("the name is empty")
-            console.log("the name is empty")
+        const pattern = /^[a-z\s]+$/;
+        if (!name.match(pattern)) {
+            alert("the name is not correct")
+            console.log("the name is not correct")
             return false;
         }
 
@@ -193,20 +193,20 @@ $(document).ready(function () {
         }
 
         const date = $("#date").val();
-        if (date === "") {
-            alert("please select a date");
-            return false
-        }
+
         const month = $("#month").val();
-        if (month === "") {
-            alert("please select a month");
-            return false;
-        }
+
         const year = $("#year").val();
-        if (year === "") {
-            alert("plese select a year");
+        if (!date || !month || !year) {
+            alert("Please select a complete date (day, month, and year).");
             return false;
         }
+        const dateObj = new Date(year, month - 1, date);
+        if (dateObj.getDate() !== date | dateObj.getMonth() + 1 != month || dateObj.getFullYear() != year) {
+            alert("The selected joining date is invalid.");
+            return false;
+        }
+
         const salary = $('select[name="salary"]').val();
         if (salary === "") {
             alert("please select a salary");
