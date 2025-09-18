@@ -193,7 +193,7 @@ $(document).ready(function () {
             alert("plese select a year");
             return false;
         }
-        const salary = $('input[name="salary"]:checked').val();
+        const salary = $('select[name="salary"]').val();
         if (salary === "") {
             alert("please select a salary");
             return false;
