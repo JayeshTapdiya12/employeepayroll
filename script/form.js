@@ -157,6 +157,7 @@ $(document).ready(function () {
         window.location.replace("http://127.0.0.1:5500/pages/dashborad.html"); // Correct the URL if needed
     });
 
+
     function validateFormData() {
         const name = $('#name').val().trim();
         console.log(name);
@@ -201,12 +202,15 @@ $(document).ready(function () {
             alert("Please select a complete date (day, month, and year).");
             return false;
         }
+
+
         const dateObj = new Date(year, month - 1, date);
-        if (dateObj.getDate() !== date | dateObj.getMonth() + 1 != month || dateObj.getFullYear() != year) {
+
+        // Check if the date, month, and year are correct.
+        if (dateObj.getDate() !== parseInt(date) || dateObj.getMonth() + 1 !== parseInt(month) || dateObj.getFullYear() !== parseInt(year)) {
             alert("The selected joining date is invalid.");
             return false;
         }
-
         const salary = $('select[name="salary"]').val();
         if (salary === "") {
             alert("please select a salary");
