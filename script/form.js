@@ -124,7 +124,21 @@ $(document).ready(function () {
         if (!formdata) return;
 
         console.log("the data is saved in the local storage");
-        localStorage.setItem("empolyee", JSON.stringify(formdata));
+        // localStorage.setItem("empolyee", JSON.stringify(formdata));
+        $.ajax({
+            url: 'http://localhost:3000/empolyee',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(formdata),
+            success: function (response) {
+                console.log("Data successfully added:", response);
+            },
+            error: function (error) {
+                console.error("Error while adding data:", error);
+            }
+        });
+        // })
+
         $("#Payroll")[0].reset();
         window.location.replace("http://127.0.0.1:5500/pages/dashborad.html"); // Correct the URL if needed
 
@@ -213,8 +227,10 @@ $(document).ready(function () {
             startdate,
             note
         };
-        const employees = JSON.parse(localStorage.getItem("empolyee")) || [];
-        employees.push(emp);
-        return employees;
+
+        // const employees = JSON.parse(localStorage.getItem("empolyee")) || [];
+        // employees.push(emp);
+
+        return emp;
     }
 })
