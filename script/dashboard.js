@@ -157,6 +157,23 @@ $(document).ready(function () {
     });
 
 
+    $(document).on('click', '#sorting', function (e) {
+        const sorting = $('select[name="sorting"]').val();
+        console.log(sorting)
+        let data2 = data
+        if (sorting === "namebyasc") {
+            data2 = data2.sort((a, b) => a.name.localeCompare(b.name))
+        } else if (sorting === "namebydsc") {
+            data2 = data2.sort((a, b) => b.name.localeCompare(a.name));
+        } else if (sorting === "salarybyasc") {
+            data2 = data2.sort((a, b) => a.salary - b.salary);
+        } else if (sorting === "salarybydsc") {
+            data2 = data2.sort((a, b) => b.salary - a.salary);
+
+        }
+        renderTable(data2)
+    })
+
     function renderTable(empdata) {
         console.log(empdata)
         const $tablebody = $("#emp-data");
@@ -166,7 +183,7 @@ $(document).ready(function () {
             const row = `
                 <tr>
                     <td>
-                        <img src="${user.profile}" alt="logo of the emp" width="50" style="border-radius:20px;" /> 
+                        <img src="${user.profile}" alt="logo of the emp" width="25" style="border-radius:20px;" /> 
                         <span>${user.name}</span>
                     </td>
                     <td>${user.gender}</td>
