@@ -123,7 +123,6 @@ $(document).ready(function () {
             console.error("Error while adding data:", error);
         }
     });
-    console.log(data);
 
     if (data) {
     }
@@ -155,6 +154,15 @@ $(document).ready(function () {
         // localStorage.setItem("empolyee", JSON.stringify(data));
         renderTable(data)
     });
+
+    $(document).on("click", ".edit-btn", function () {
+        const index = $(this).data("index");
+        console.log(index)
+        localStorage.setItem("editId", index);
+        window.location.replace("http://127.0.0.1:5500/pages/form.html");
+
+
+    })
 
 
     $(document).on('click', '#sorting', function (e) {
@@ -197,7 +205,7 @@ $(document).ready(function () {
                     <td>
                         <div class="tdbutton">
                             <i class="fa-solid fa-trash delete-btn" data-index="${user.id}")></i>
-                            <i class="fa-sharp fa-solid fa-pencil"></i>
+                            <i class="fa-sharp fa-solid fa-pencil edit-btn"  data-index=${user.id}></i>
                         </div>
                     </td>
                 </tr>
