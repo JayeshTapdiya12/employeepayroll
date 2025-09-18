@@ -106,9 +106,27 @@
 // }
 
 $(document).ready(function () {
-    const data = JSON.parse(localStorage.getItem("empolyee")) || [];
+
+    // const data = JSON.parse(localStorage.getItem("empolyee")) || [];
+    let data;
+    $.ajax({
+        url: 'http://localhost:3000/empolyee',
+        type: 'GET',
+        contentType: 'application/json',
+        success: function (response) {
+            data = (response);
+            renderTable(data);
+
+            console.log("Data successfully added:", response);
+        },
+        error: function (error) {
+            console.error("Error while adding data:", error);
+        }
+    });
     console.log(data);
-    renderTable(data);
+
+    if (data) {
+    }
 
     $("#search").on("input", function () {
         const query = $(this).val();
@@ -123,11 +141,24 @@ $(document).ready(function () {
         const index = $(this).data("index");
         console.log(index)
         data.splice(index, 1);
-        localStorage.setItem("empolyee", JSON.stringify(data));
+        $.ajax({
+            url: `http://localhost:3000/empolyee/${index}`,
+            type: 'DELETE',
+            contentType: 'application/json',
+            success: function (response) {
+                console.log("Data successfully added:", response);
+            },
+            error: function (error) {
+                console.error("Error while adding data:", error);
+            }
+        });
+        // localStorage.setItem("empolyee", JSON.stringify(data));
         renderTable(data)
-    })
+    });
+
 
     function renderTable(empdata) {
+        console.log(empdata)
         const $tablebody = $("#emp-data");
         $tablebody.empty();
 
@@ -148,7 +179,7 @@ $(document).ready(function () {
                     <td>${user.startdate}</td>
                     <td>
                         <div class="tdbutton">
-                            <i class="fa-solid fa-trash delete-btn" data-index="${index}")></i>
+                            <i class="fa-solid fa-trash delete-btn" data-index="${user.id}")></i>
                             <i class="fa-sharp fa-solid fa-pencil"></i>
                         </div>
                     </td>
