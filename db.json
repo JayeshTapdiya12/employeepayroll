@@ -1,7 +1,6 @@
 {
   "empolyee": [
     {
-      "id": "dd01",
       "name": "jayesh",
       "profile": "../assests/img1.png",
       "gender": "male",
@@ -9,22 +8,23 @@
         "hr",
         "Finance"
       ],
-      "salary": "60000",
+      "salary": "90000",
       "startdate": "3/2/2021",
-      "note": "hello"
+      "note": "hello",
+      "id": "dd01"
     },
     {
-      "id": "832e",
-      "name": "haranath",
+      "name": "haranath raju",
       "profile": "../assests/img1.png",
       "gender": "male",
       "department": [
         "Finance",
         "Engineer"
       ],
-      "salary": "80000",
-      "startdate": "12/11/2018",
-      "note": "he is bad boy!!!!"
+      "salary": "30000",
+      "startdate": "2/1/2015",
+      "note": "he is bad boy!!!!",
+      "id": "832e"
     }
   ]
 }
