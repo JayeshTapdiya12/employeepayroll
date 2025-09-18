@@ -118,27 +118,85 @@
 console.log($)
 
 $(document).ready(function () {
+
+    const editid = localStorage.getItem("editId");
+    console.log(editid)
+
+    const $button = $("#buttonup");
+    $button.empty();
+
+    if (editid) {
+        const button = ` <button type="submit" class="submit">Update  Form</button> <button type="reset" class="reset">Reset</button>`
+        $button.append(button)
+    } else {
+        const button = ` <button type="submit" class="submit">Submit Form</button> <button type="reset" class="reset">Reset</button>`
+        $button.append(button)
+    }
+
+    if (editid) {
+        $.get(`http://localhost:3000/empolyee/${editid}`, function (emp) {
+
+            $("#name").val(emp.name);
+            $(`input[name='profile'][value='${emp.profile}']`).prop("checked", true);
+            $(`input[name='gender'][value=${emp.gender}]`).prop("checked", true);
+            emp.department.forEach((dep) => {
+                $(`input[name='department'][value=${[dep]}]`).prop("checked", true);
+            })
+
+            const [date, month, year] = emp.startdate.split('/');
+            $(`#date`).val(date);
+            $('#month').val(month);
+            $('#year').val(year);
+            $(`select[name="salary"]`).val(emp.salary);
+            $('textarea').val(emp.note)
+
+        });
+    }
+
+
     $("#Payroll").on("submit", function (e) {
         e.preventDefault();
         const formdata = validateFormData();
         if (!formdata) return;
 
+        console.log(editid)
         console.log("the data is saved in the local storage");
         // localStorage.setItem("empolyee", JSON.stringify(formdata));
-        $.ajax({
-            url: 'http://localhost:3000/empolyee',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(formdata),
-            success: function (response) {
-                console.log("Data successfully added:", response);
-            },
-            error: function (error) {
-                console.error("Error while adding data:", error);
-            }
-        });
-        // })
 
+        if (editid) {
+            $.ajax({
+                url: `http://localhost:3000/empolyee/${editid}`,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(formdata),
+                success: function (response) {
+
+                    console.log("Data successfully added:", response);
+                },
+                error: function (error) {
+                    console.error("Error while adding data:", error);
+                }
+            });
+        } else {
+            $.ajax({
+                url: 'http://localhost:3000/empolyee',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formdata),
+                success: function (response) {
+                    console.log("Data successfully added:", response);
+                },
+                error: function (error) {
+                    console.error("Error while adding data:", error);
+                }
+            });
+        }
+
+
+        if (editid) {
+            localStorage.removeItem("editId");
+
+        }
         $("#Payroll")[0].reset();
         window.location.replace("http://127.0.0.1:5500/pages/dashborad.html"); // Correct the URL if needed
 
@@ -154,8 +212,9 @@ $(document).ready(function () {
     $("#cancel").on("click", function (e) {
         e.preventDefault();
         $("#Payroll")[0].reset();
-        window.location.replace("http://127.0.0.1:5500/pages/dashborad.html"); // Correct the URL if needed
+        window.location.replace("http://127.0.0.1:5500/pages/dashborad.html");
     });
+
 
 
     function validateFormData() {
@@ -232,8 +291,7 @@ $(document).ready(function () {
             note
         };
 
-        // const employees = JSON.parse(localStorage.getItem("empolyee")) || [];
-        // employees.push(emp);
+
 
         return emp;
     }
