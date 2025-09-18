@@ -1,106 +1,163 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const data = JSON.parse(localStorage.getItem("employee"));
+// document.addEventListener("DOMContentLoaded", () => {
+//     const data = JSON.parse(localStorage.getItem("employee"));
+//     console.log(data);
+
+//     const tableBody = document.getElementById("emp-data");
+//     const search = document.getElementById("search");
+
+//     search.addEventListener("input", (e) => {
+//         const query = e.target.value.toLowerCase();
+
+//         const filteredData = data.filter(c =>
+//             c.name.toLowerCase().includes(query) ||
+//             c.gender.toLowerCase().includes(query) ||
+//             c.department.some(dep => dep.toLowerCase().includes(query)) ||
+//             c.salary.toLowerCase().includes(query) ||
+//             c.startdat e.toLowerCase().includes(query)
+//         );
+
+//         redendertable(filteredData);
+//     });
+
+//     tableBody.innerHTML = "";
+
+//     data.forEach((user, index) => {
+//         const row = document.createElement("tr");
+
+//         row.innerHTML = `<td><img src=${user.profile
+//             }  alt="logo of the emp" width="50" style="border-radius:20px ;" /> <span>${user.name
+//             }</span></td>
+//         <td>${user.gender}</td>
+//         <td>
+//         <div class="departments">
+//         <div class="departments d-flex flex-wrap gap-2">
+//     ${user.department
+//                 .map((dep) => `<p class="department ">${dep}</p>`)
+//                 .join("")}
+// </div>
+//         </div>
+
+//         </td>
+//         <td>
+//         <i class="fa-solid fa-indian-rupee-sign"> </i>${user.salary}
+//         </td>
+//         <td>
+//         ${user.startdate}
+//         </td>
+//         <td>
+//                                 <div class="tdbutton">
+//                                     <i class="fa-solid fa-trash" onclick=deleteemp(${index}) ></i>
+//                                     <i class="fa-sharp fa-solid fa-pencil"></i>
+//                                 </div>
+//                             </td>
+//         `;
+//         tableBody.appendChild(row);
+//     });
+// });
+
+
+
+// function redendertable(data) {
+//     const tableBody = document.getElementById("emp-data");
+
+//     tableBody.innerHTML = "";
+
+//     data.forEach((user, index) => {
+//         const row = document.createElement("tr");
+
+//         row.innerHTML = `<td><img src=${user.profile
+//             }  alt="logo of the emp" width="50" style="border-radius:20px ;" /> <span>${user.name
+//             }</span></td>
+//         <td>${user.gender}</td>
+//         <td>
+//         <div class="departments">
+//         <div class="departments d-flex flex-wrap gap-2">
+//     ${user.department
+//                 .map((dep) => `<p class="department ">${dep}</p>`)
+//                 .join("")}
+// </div>
+//         </div>
+
+//         </td>
+//         <td>
+//         <i class="fa-solid fa-indian-rupee-sign"> </i>${user.salary}
+//         </td>
+//         <td>
+//         ${user.startdate}
+//         </td>
+//         <td>
+//                                 <div class="tdbutton">
+//                                     <i class="fa-solid fa-trash" onclick=deleteemp(${index}) ></i>
+//                                     <i class="fa-sharp fa-solid fa-pencil"></i>
+//                                 </div>
+//                             </td>
+//         `;
+//         tableBody.appendChild(row);
+//     });
+//     // location.reload()
+// }
+
+
+// function deleteemp(index) {
+//     const emp = JSON.parse(localStorage.getItem("employee")) || [];
+//     emp.splice(index, 1);
+//     localStorage.setItem("employee", JSON.stringify(emp));
+//     location.reload();
+// }
+
+$(document).ready(function () {
+    const data = JSON.parse(localStorage.getItem("empolyee")) || [];
     console.log(data);
+    renderTable(data);
 
-    const tableBody = document.getElementById("emp-data");
-    const search = document.getElementById("search");
-
-    search.addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase();
-
-        const filteredData = data.filter(c =>
-            c.name.toLowerCase().includes(query) ||
-            c.gender.toLowerCase().includes(query) ||
-            c.department.some(dep => dep.toLowerCase().includes(query)) ||
-            c.salary.toLowerCase().includes(query) ||
-            c.startdate.toLowerCase().includes(query)
+    $("#search").on("input", function () {
+        const query = $(this).val();
+        const filterData = data.filter(emp =>
+            emp.name.toLowerCase().includes(query.toLowerCase())
         );
-
-        redendertable(filteredData);
+        renderTable(filterData);
     });
 
-    tableBody.innerHTML = "";
 
-    data.forEach((user, index) => {
-        const row = document.createElement("tr");
+    $(document).on("click", ".delete-btn", function () {
+        const index = $(this).data("index");
+        console.log(index)
+        data.splice(index, 1);
+        localStorage.setItem("empolyee", JSON.stringify(data));
+        renderTable(data)
+    })
 
-        row.innerHTML = `<td><img src=${user.profile
-            }  alt="logo of the emp" width="50" style="border-radius:20px ;" /> <span>${user.name
-            }</span></td>
-        <td>${user.gender}</td>
-        <td>
-        <div class="departments">
-        <div class="departments d-flex flex-wrap gap-2">
-    ${user.department
-                .map((dep) => `<p class="department ">${dep}</p>`)
-                .join("")}
-</div>
-        </div>
-        
-        </td>
-        <td>
-        <i class="fa-solid fa-indian-rupee-sign"> </i>${user.salary}
-        </td>
-        <td>
-        ${user.startdate}
-        </td>
-        <td>
-                                <div class="tdbutton">
-                                    <i class="fa-solid fa-trash" onclick=deleteemp(${index}) ></i>
-                                    <i class="fa-sharp fa-solid fa-pencil"></i>
-                                </div>
-                            </td>
-        `;
-        tableBody.appendChild(row);
-    });
+    function renderTable(empdata) {
+        const $tablebody = $("#emp-data");
+        $tablebody.empty();
+
+        empdata.forEach((user, index) => {
+            const row = `
+                <tr>
+                    <td>
+                        <img src="${user.profile}" alt="logo of the emp" width="50" style="border-radius:20px;" /> 
+                        <span>${user.name}</span>
+                    </td>
+                    <td>${user.gender}</td>
+                    <td>
+                        <div class="departments d-flex flex-wrap gap-2">
+                            ${user.department.map(dep => `<p class="department">${dep}</p>`).join("")}
+                        </div>
+                    </td>
+                    <td><i class="fa-solid fa-indian-rupee-sign"></i> ${user.salary}</td>
+                    <td>${user.startdate}</td>
+                    <td>
+                        <div class="tdbutton">
+                            <i class="fa-solid fa-trash delete-btn" data-index="${index}")></i>
+                            <i class="fa-sharp fa-solid fa-pencil"></i>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            $tablebody.append(row);
+        });
+    }
+
+
+
 });
-
-
-
-function redendertable(data) {
-    const tableBody = document.getElementById("emp-data");
-
-    tableBody.innerHTML = "";
-
-    data.forEach((user, index) => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `<td><img src=${user.profile
-            }  alt="logo of the emp" width="50" style="border-radius:20px ;" /> <span>${user.name
-            }</span></td>
-        <td>${user.gender}</td>
-        <td>
-        <div class="departments">
-        <div class="departments d-flex flex-wrap gap-2">
-    ${user.department
-                .map((dep) => `<p class="department ">${dep}</p>`)
-                .join("")}
-</div>
-        </div>
-        
-        </td>
-        <td>
-        <i class="fa-solid fa-indian-rupee-sign"> </i>${user.salary}
-        </td>
-        <td>
-        ${user.startdate}
-        </td>
-        <td>
-                                <div class="tdbutton">
-                                    <i class="fa-solid fa-trash" onclick=deleteemp(${index}) ></i>
-                                    <i class="fa-sharp fa-solid fa-pencil"></i>
-                                </div>
-                            </td>
-        `;
-        tableBody.appendChild(row);
-    });
-    // location.reload()
-}
-
-
-function deleteemp(index) {
-    const emp = JSON.parse(localStorage.getItem("employee")) || [];
-    emp.splice(index, 1);
-    localStorage.setItem("employee", JSON.stringify(emp));
-    location.reload();
-}
