@@ -19,6 +19,16 @@ body {
   padding-left: 32vh;
   align-items: center;
 }
+.sortting {
+  border-radius: 10px;
+  height: 4.5vh;
+  margin-left: 2px;
+  color: white;
+  background-color: #82a70c;
+}
+.sortting::placeholder {
+  color: white;
+}
 
 .image {
   width: 2vh;
